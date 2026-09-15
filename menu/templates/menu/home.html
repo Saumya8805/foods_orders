@@ -12,13 +12,20 @@
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <i class="fa-solid fa-house"></i>
   <a class="navbar-brand" href="/">FoodOrders</a>
   
   <div class="ms-auto">       
-    <a href="{% url 'view_cart' %}" class="btn btn-success">Cart</a>
-     
-    <a href="{% url 'signup' %}" class="btn btn-outline-primary">Sign Up</a>
-    <a href="{% url 'login' %}" class="btn btn-outline-success">Login</a>
+    <a href="{% url 'view_cart' %}" class="btn btn-success">
+        <i class="fa-solid fa-cart-shopping"></i>Cart</a>
+   
+   
+    <a href="{% url 'signup' %}" class="btn btn-outline-primary">
+         <i class="fa-solid fa-arrow-right-to-bracket"></i>Sign Up</a>
+  
+
+    <a href="{% url 'login' %}" class="btn btn-outline-success">
+        <i class="fa-solid fa-right-to-bracket"></i>Login</a>
   </div>
 </nav>
 
@@ -37,13 +44,13 @@
   <div class="row">
     <div class="col-md-3">
       <div class="card">
-        <img src="/media/pizza.jpg" class="card-img-top" alt="Pizza">
+        <img src="/media/image.png" class="card-img-top" alt="Pizza">
         <div class="card-body text-center">
           <h5>Pizza</h5>
         </div>
       </div>
     </div>
-    <!-- Repeat for Burgers, Drinks, Desserts -->
+
      <div class="col-md-3">
       <div class="card">
         <img src="/media/burger.jpg" class="card-img-top" alt="burger">
@@ -52,14 +59,30 @@
         </div>
       </div>
     </div>
+         <div class="col-md-3">
+      <div class="card">
+        <img src="/media/cold drink.jpg" class="card-img-top" alt="burger">
+        <div class="card-body text-center">
+          <h5>Cold Drink & Juice</h5>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </div>
 
 
 
 <!-- Footer -->
+
 <footer class="bg-dark text-white text-center p-3 mt-5">
-  <p>&copy; 2026 FoodOrders | Contact us at info@foodorders.com</p>
+  <p>&copy; 2026 FoodOrders | Contact us at 
+     <a href="mailto:info@foodorders.com" class="text-warning">info@foodorders.com</a>
+  </p>
+  <p>For Recipe Contact: 
+     <a href="mailto:smishra@gmail.com" class="text-warning">saumyarecipe@gmail.com</a>
+  </p>
 </footer>
 
 </body>
