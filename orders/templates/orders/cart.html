@@ -1,0 +1,29 @@
+
+
+<div class="container mt-5">
+    <h2>Your Cart</h2>
+    <ul class="list-group">
+        {% for cart_item in cart_items %}
+        <li class="list-group-item d-flex align-items-center">
+            <img src="{{ cart_item.food_item.image.url }}" 
+                 alt="{{ cart_item.food_item.name }}" 
+                 style="width: 80px; height: 80px; object-fit: cover; margin-right: 15px;">
+            
+            <div class="flex-grow-1">
+                {{ cart_item.food_item.name }} - ₹{{ cart_item.food_item.price }}
+                <form action="{% url 'update_cart' cart_item.food_item.id %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="number" name="quantity" value="{{ cart_item.quantity }}" min="0">
+                    <button type="submit" class="btn btn-sm btn-warning">Update</button>
+                </form>
+                <form action="{% url 'remove_from_cart' cart_item.food_item.id %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                </form>
+            </div>
+        </li>
+        {% empty %}
+        <li class="list-group-item">Your cart is empty.</li>
+        {% endfor %}
+    </ul>
+</div>
