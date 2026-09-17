@@ -136,8 +136,17 @@ import os
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_REDIRECT_URL = '/menu/'
-LOGOUT_REDIRECT_URL = '/menu/'
+
+
+
+
+
+# After login, go to homepage
+LOGIN_REDIRECT_URL = '/'
+
+# After logout, also go to homepage
+LOGOUT_REDIRECT_URL = '/'
+
 
 
 

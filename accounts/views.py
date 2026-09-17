@@ -9,7 +9,7 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')  # after signup, go to login
+            return redirect('home')  # after signup, go to login
     else:
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', {'form': form})
