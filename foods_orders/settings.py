@@ -145,7 +145,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = '/'
 
 # After logout, also go to homepage
+
 LOGOUT_REDIRECT_URL = '/'
+
 
 
 

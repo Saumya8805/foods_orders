@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Food Orders</title>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" 
-    integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
-     crossorigin="anonymous" referrerpolicy="no-referrer">
+
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
@@ -26,6 +26,7 @@
   </div>
 </nav>
 
+
 <!-- Hero Banner -->
 <div class="bg-light text-center p-5">
   <h1>Order Fresh Food Anytime</h1>
@@ -33,6 +34,9 @@
   <a href="{% url 'menu_list' %}" class="btn btn-warning btn-lg">Shop Now</a>
 </div>
 
+<div>
+  <h4 style =" text-align:center; background-color:light yellow";> Byu any 7 to get free 2  <h4>
+</div>
 
 
 <!-- Categories -->
@@ -71,22 +75,54 @@
 
 
 
+
+<ul class="list-unstyled">
+  {% for category in categories %}
+    <li>
+      <a href="{% url 'category_detail' category.id %}" class="text-warning">
+        {{ category.name }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+
+
 <!-- Footer -->
 
-<footer class="bg-dark text-white text-center p-3 mt-5">
-  <p>&copy; 2026 FoodOrders | Contact us at 
-     <a href="mailto:info@foodorders.com" class="text-warning">info@foodorders.com</a>
-  </p>
-  <p>For Recipe Contact: 
-     <a href="mailto:smishra@gmail.com" class="text-warning">saumyarecipe@gmail.com</a>
-  </p>
+
+
+
+
+
+
+
+<footer class="bg-dark text-white mt-5 p-4">
+  <div class="container">
+    <div class="row">
+      <!-- Left Section -->
+      <div class="col-md-6">
+        <h5>FoodOrders</h5>
+        <p>&copy; 2026 FoodOrders. All rights reserved.</p>
+      </div>
+
+      <!-- Right Section -->
+      <div class="col-md-6 text-md-end">
+        <p>
+          Contact us: 
+          <a href="mailto:info@foodorders.com" class="text-warning">info@foodorders.com</a> 
+         <p>For Recipe Contact: 
+          <a href="mailto:smishra@gmail.com" class="text-warning">saumyarecipe@gmail.com</a>
+        </p>
+        </p>
+        <!-- Social Icons -->
+        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+        <a href="sm097339" class="text-white"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </div>
 </footer>
-
-
-
-
-
-
 
 
 </body>

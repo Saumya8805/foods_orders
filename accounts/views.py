@@ -13,3 +13,15 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', {'form': form})
+
+
+
+
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
+def custom_logout(request):
+    if request.method == "POST":
+        logout(request)
+        return redirect('home')
+

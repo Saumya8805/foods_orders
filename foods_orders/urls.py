@@ -19,6 +19,8 @@ from django.urls import path , include
 from menu import views
 from django.conf import settings
 from django.conf.urls.static import static
+   
+
 
 
 urlpatterns = [
@@ -26,7 +28,7 @@ urlpatterns = [
     path('menu/', include('menu.urls')),   # 👈 this line is required
     path('', views.home, name='home'),
     path('accounts/', include('accounts.urls')),
-
+  
     path('cart/', include('orders.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
