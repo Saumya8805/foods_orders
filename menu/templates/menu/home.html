@@ -12,11 +12,17 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <i class="bi bi-house"></i>
+
   <a class="navbar-brand" href="/">FoodOrders</a>
+  
   <div class="ms-auto">
     {% if user.is_authenticated %}
       <span class="me-2">Welcome, {{ user.username }}</span>
-      <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+      <a href="{% url 'logout' %}" class="btn btn-danger">Logout
+           <i class="bi bi-box-arrow-right"></i>
+      </a>
+   
     {% else %}
       <a href="{% url 'signup' %}" class="btn btn-outline-primary">Sign Up</a>
 .
@@ -76,15 +82,6 @@
 
 
 
-<ul class="list-unstyled">
-  {% for category in categories %}
-    <li>
-      <a href="{% url 'category_detail' category.id %}" class="text-warning">
-        {{ category.name }}
-      </a>
-    </li>
-  {% endfor %}
-</ul>
 
 
 
