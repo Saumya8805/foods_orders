@@ -2,15 +2,6 @@ from django.shortcuts import render
 from .models import FoodItem
 
 # Create your views here.
-
-
-
-
-
-
-
-
-
 def home(request):
     return render(request, 'menu/home.html')
 

@@ -1,19 +1,19 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from .models import CartItem
 from menu.models import FoodItem
-
-# Create your views here.
-
-## define function for too add the food in our cart list
-
-
 from django.contrib.auth.decorators import login_required
 
 
 
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import CartItem
-from menu.models import FoodItem
+
+
+
+# Create your views here.
+
+## define function too add the food in our cart list
+
+
+
 
 def add_to_cart(request, item_id):
     item = get_object_or_404(FoodItem, id=item_id)
@@ -25,6 +25,8 @@ def add_to_cart(request, item_id):
         cart_item.quantity += 1
         cart_item.save()
     return redirect('view_cart')  
+
+## TO view the cart
 
 def view_cart(request):
     cart_items = CartItem.objects.filter(user=request.user)
@@ -45,6 +47,7 @@ def update_cart(request, item_id):
             cart_item.delete()  # remove if quantity is 0
     return redirect('view_cart')
 
+## to remove the cart
 
 
 def remove_from_cart(request, item_id):
