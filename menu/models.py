@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 ## creating a class for food items
 class FoodItem(models.Model):
     name = models.CharField(max_length=100)
