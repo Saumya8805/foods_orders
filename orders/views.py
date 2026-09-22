@@ -11,10 +11,6 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 ## define function too add the food in our cart list
-
-
-
-
 def add_to_cart(request, item_id):
     item = get_object_or_404(FoodItem, id=item_id)
     cart_item, created = CartItem.objects.get_or_create(

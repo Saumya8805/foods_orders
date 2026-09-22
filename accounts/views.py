@@ -20,10 +20,12 @@ def signup(request):
 
 
 # accounts/views.py
+
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 
 def custom_logout(request):
     if request.method == "POST":
         logout(request)
-        return redirect('home')
+        return redirect('home')   # or '/'
+
