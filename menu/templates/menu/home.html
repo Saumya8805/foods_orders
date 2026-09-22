@@ -19,6 +19,9 @@
     {% if user.is_authenticated %}
 
       <span class="me-2">Welcome, {{ user.username }}</span>
+
+      <!--Logout Form-->
+
       <form method="post" action="{% url 'logout' %}">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Logout</button>
@@ -36,23 +39,24 @@
 
 
 <!-- Hero Banner -->
+
 <div class="bg-light text-center p-4">
   <h1>Order Fresh Food Anytime</h1>
   <p>Fast delivery, best taste, great prices</p>
   <a href="{% url 'menu_list' %}" class="btn btn-warning btn-lg">Shop Now</a>
 </div>
 
-<div class="bg-warning text-dark fw-bold p-2 scroll-text">
-<marquee behavior="scroll" direction="left" scrollamount="9">
-📢 Buy any 7 to get free 2 🎁
-</marquee>
+ <div class="bg-warning text-dark fw-bold p-2 scroll-text">
+  <marquee behavior="scroll" direction="left" scrollamount="9">
+   📢 Buy any 7 to get free 2 🎁
+  </marquee>
 </div>
 
 
 
 
-
 <!-- Categories -->
+
 <div class="container mt-5">
   <h2>Categories</h2>
   <div class="row">
@@ -73,11 +77,30 @@
         </div>
       </div>
     </div>
+
       <div class="col-md-3">
       <div class="card">
         <img src="/media/cold drink.jpg" class="card-img-top" alt="burger">
         <div class="card-body text-center">
           <h5>Cold Drink & Juice</h5>
+        </div>
+      </div>
+    </div>
+        
+      <div class="col-md-3">
+      <div class="card">
+        <img src="/media/morningmeal.jpg" class="card-img-top" alt="Dairy, bread &eggs">
+        <div class="card-body text-center">
+          <h5>Dairy, Breads & Eggs</h5>
+        </div>
+      </div>
+    </div>
+
+          <div class="col-md-3">
+      <div class="card">
+        <img src="/media/fruitsandveg.jpg" class="card-img-top" alt="Fruits & Vegetable">
+        <div class="card-body text-center">
+          <h5>Fruits & Vegetable</h5>
         </div>
       </div>
     </div>
@@ -88,15 +111,7 @@
 
 
 
-
 <!-- Footer -->
-
-
-
-
-
-
-
 
 <footer class="bg-dark text-white mt-5 p-4">
   <div class="container">
@@ -108,6 +123,7 @@
       </div>
 
       <!-- Right Section -->
+
       <div class="col-md-6 text-md-end">
         <p>
           Contact us: 
@@ -116,7 +132,9 @@
           <a href="mailto:smishra@gmail.com" class="text-warning">saumyarecipe@gmail.com</a>
         </p>
         </p>
+
         <!-- Social Icons -->
+
         <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
         <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
         <a href="sm097339" class="text-white"><i class="bi bi-instagram"></i></a>
@@ -124,7 +142,5 @@
     </div>
   </div>
 </footer>
-
-
 </body>
 </html>
