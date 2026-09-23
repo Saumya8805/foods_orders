@@ -5,9 +5,13 @@ from .models import FoodItem
 
 
 
+from django.contrib import admin
+from .models import FoodItem, Category
+
 @admin.register(FoodItem)
 class FoodItemAdmin(admin.ModelAdmin):
     list_display = ('name', 'price', 'category')
-    search_fields = ('name', 'category')
 
-
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)

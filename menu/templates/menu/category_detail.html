@@ -1,0 +1,17 @@
+<h2>{{ category.name }}</h2>
+<div class="row">
+  {% for product in products %}
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+        <div class="card-body text-center">
+          <h5>{{ product.name }}</h5>
+          <p>{{ product.description }}</p>
+          <p>₹{{ product.price }}</p>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>No products found in this category.</p>
+  {% endfor %}
+</div>

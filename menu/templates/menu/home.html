@@ -62,7 +62,23 @@
 
 
 
-<!-- Categories -->
+
+<div class="row">
+  {% for category in categories %}
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{{ category.image.url }}" class="card-img-top" alt="{{ category.name }}">
+        <div class="card-body text-center">
+          <h5>{{ category.name }}</h5>
+          <a href="{% url 'category_detail' category.id %}" class="btn btn-warning">View</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+
+<!-- Categories 
 
 <div class="container mt-5">
   <h2>Categories</h2>
@@ -215,7 +231,7 @@
 </div>
 </div>
 
-
+ -->
 
 <!-- Footer -->
 
