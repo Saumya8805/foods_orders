@@ -1,11 +1,13 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import logout
+from django.contrib.auth import logout\
+
 
 
 # Create your views here.
 
+##view function for Signup form
 
 def signup(request):
     if request.method == 'POST':
@@ -17,15 +19,10 @@ def signup(request):
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', {'form': form})
 
-
-
-# accounts/views.py
-
-from django.contrib.auth import logout
-from django.shortcuts import redirect
+#view function for logout
 
 def custom_logout(request):
     if request.method == "POST":
         logout(request)
-        return redirect('home')   # or '/'
+        return redirect('home')  
 

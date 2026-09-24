@@ -3,18 +3,26 @@
 <head>
     <title>Food Orders</title>
 
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
 </head>
+
 <style>
+
+  body{
+  color: #37475a;
+  }
+
   .card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   transition: all 0.3s ease-in-out;
+
+  
 }
 </style>
+
 <body>
 
 
@@ -59,9 +67,9 @@
   </marquee>
 </div>
 
+<!-- Hero Section End -->
 
-
-
+<!-- For Categories -->
 
 <div class="row">
   {% for category in categories %}
@@ -77,168 +85,17 @@
   {% endfor %}
 </div>
 
+<!--Catogrie Section End-->
 
-<!-- Categories 
-
-<div class="container mt-5">
-  <h2>Categories</h2>
-  <div class="row">
-    
-
-     <div class="col-md-3">
-      <div class="card">
-        <img src="/media/saus.jpg" class="card-img-top" alt="Saus & Spreads">
-        <div class="card-body text-center">
-          <h5>Saus & Spreads</h5>
-        </div>
-      </div>
-    </div>
-
-      <div class="col-md-3">
-      <div class="card">
-        <img src="/media/Cold Drink.jpg" class="card-img-top" alt="burger">
-        <div class="card-body text-center">
-          <h5>Cold Drink & Juice</h5>
-        </div>
-      </div>
-    </div>
-
-
-
-        <div class="col-md-3">
-      <div class="card">
-        <img src="/media/atta.jpg" class="card-img-top" alt="Snacks & Munchies">
-        <div class="card-body text-center">
-          <h5>Atta, Rice & Dal</h5>
-        </div>
-      </div>
-    </div>
-
-
-    
-        <div class="col-md-3">
-      <div class="card">
-        <img src="/media/masala.jpg" class="card-img-top" alt="Masala, Oil & More">
-        <div class="card-body text-center">
-          <h5>Masala, Oil & More  </h5>
-        </div>
-      </div>
-    </div>
-
-
-
-
-    <div class="col-md-3">
-      <div class="card">
-        <img src="/media/snacksandmun.jpg" class="card-img-top" alt="Snacks & Munchies">
-        <div class="card-body text-center">
-          <h5>Snacks & Munchies</h5>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-              <div class="col-md-3">
-      <div class="card">
-        <img src="/media/or.jpg" class="card-img-top" alt="Orgnaic & Healthy livingood">
-        <div class="card-body text-center">
-          <h5>Orgnaic & Healthy livingood</h5>
-        </div>
-      </div>
-    </div>
-
-
-    
-      <div class="col-md-3">
-      <div class="card">
-        <img src="/media/fruitsandveg.jpg" class="card-img-top" alt="Fruits & Vegetable">
-        <div class="card-body text-center">
-          <h5>Fruits & Vegetable</h5>
-        </div>
-      </div>
-    </div>
-
-
-
-        <div class="col-md-3">
-      <div class="card">
-        <img src="/media/sweet.jpg" class="card-img-top" alt="sweet burger">
-        <div class="card-body text-center">
-          <h5>Cold Drink & Juice</h5>
-        </div>
-      </div>
-    </div>
-    
-
-        
-
-
-
-   <div class="col-md-3">
-      <div class="card">
-        <img src="/media/tea.jpg" class="card-img-top" alt="Snacks & Munchies">
-        <div class="card-body text-center">
-          <h5>Tea & Coffes</h5>
-        </div>
-      </div>
-    </div>
-
-
-          <div class="col-md-3">
-      <div class="card">
-        <img src="/media/breakfast.jpg" class="card-img-top" alt="Breakfast">
-        <div class="card-body text-center">
-          <h5>Breakfast</h5>
-        </div>
-      </div>
-    </div>    
-
-
-
-
-        
-      <div class="col-md-3">
-      <div class="card">
-        <img src="/media/morningmeal.jpg" class="card-img-top" alt="Dairy, bread &eggs">
-        <div class="card-body text-center">
-          <h5>Dairy, Breads & Eggs</h5>
-        </div>
-      </div>
-    </div>
-
-
-
-          <div class="col-md-3">
-      <div class="card">
-        <img src="/media/medical.jpg" class="card-img-top" alt="Pharmacy & Wellness">
-        <div class="card-body text-center">
-          <h5>Pharmacy & Wellness</h5>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-</div>
-</div>
-
- -->
 
 <!-- Footer -->
 
 <footer class="bg-dark text-white mt-5 p-4">
   <div class="container">
     <div class="row">
+
       <!-- Left Section -->
+
       <div class="col-md-6">
         <h5>FoodOrders</h5>
         <p>&copy; 2026 FoodOrders. All rights reserved.</p>
@@ -264,5 +121,7 @@
     </div>
   </div>
 </footer>
+
 </body>
+
 </html>
