@@ -13,18 +13,33 @@ from django.contrib.auth.decorators import login_required
 ## define function too add the food in our cart list
 
 
-def add_to_cart(request, item_id):
-    item = get_object_or_404(FoodItem, id=item_id)
+
+
+
+
+from django.shortcuts import redirect, get_object_or_404
+from .models import CartItem
+from menu.models import FoodItem
+
+def add_to_cart(request, food_id):
+    food_item = get_object_or_404(FoodItem, id=food_id)
     cart_item, created = CartItem.objects.get_or_create(
         user=request.user,
-        food_item=item
+        food_item=food_item,
+        defaults={'quantity': 1}
     )
     if not created:
         cart_item.quantity += 1
         cart_item.save()
-    return redirect('view_cart')  
+    return redirect('cart_detail')
+
+
 
 ## TO view the cart
+
+def cart_detail(request):
+    cart_items = CartItem.objects.filter(user=request.user)
+    return render(request, 'orders/cart_detail.html', {'cart_items': cart_items})
 
 def view_cart(request):
     cart_items = CartItem.objects.filter(user=request.user)
@@ -52,6 +67,7 @@ def remove_from_cart(request, item_id):
     cart_item = get_object_or_404(CartItem, user=request.user, food_item_id=item_id)
     cart_item.delete()
     return redirect('view_cart')
+
 
 
 

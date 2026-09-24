@@ -14,13 +14,26 @@
   color: #37475a;
   }
 
-  .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-  transition: all 0.3s ease-in-out;
-
-  
+.card {
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.col-md-3 {
+  display: flex;
+}
+
 </style>
 
 <body>
@@ -71,21 +84,27 @@
 
 <!-- For Categories -->
 
-<div class="row">
-  {% for category in categories %}
-    <div class="col-md-3 mb-4">
-      <div class="card h-100 shadow-sm">
-        <img src="{{ category.image.url }}" class="card-img-top" alt="{{ category.name }}">
-        <div class="card-body text-center">
-          <h5>{{ category.name }}</h5>
-          <a href="{% url 'category_detail' category.id %}" class="btn btn-warning">View</a>
+<div class="container my-4">
+  <div class="row">
+    {% for category in categories %}
+      <div class="col-md-3 mb-4 d-flex">
+        <div class="card h-100 shadow-sm w-100">
+          <img src="{{ category.image.url }}" class="card-img-top" alt="{{ category.name }}" style="height:200px;  object-fit:cover;">
+          <div class="card-body text-center">
+            <h5>{{ category.name }}</h5>
+            <a href="{% url 'category_detail' category.id %}" class="btn btn-warning">View</a>
+          </div>
         </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
 
+
 <!--Catogrie Section End-->
+
+
+
 
 
 <!-- Footer -->
