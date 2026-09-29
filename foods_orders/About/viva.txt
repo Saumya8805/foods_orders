@@ -1,0 +1,141 @@
+General Django Questions with Solutions
+
+What are models in Django?  
+👉 Models define the structure of your database tables. For example, Category, FoodItem, and CartItem are models in your project.
+ They use Django ORM to interact with the database without writing raw SQL.
+
+What is the role of views?  
+👉 Views contain the logic for handling requests. For example, add_to_cart adds a product to the cart, and cart_detail
+ displays all cart items.
+
+What are templates?  
+👉 Templates are HTML files with Django template tags ({{ }} and {% %}) used to display dynamic data. Example: showing
+ product name and price in a card layout.
+
+What is urls.py used for?  
+👉 It maps URLs to views. Example: /cart/add/1/ calls the add_to_cart view.
+
+How did you design Category and FoodItem models?  
+👉 Category stores product categories (Tea, Cold Drinks, etc.), and FoodItem stores individual products linked to a category
+ using a ForeignKey.
+
+How does the CartItem model work?  
+👉 CartItem links a product (FoodItem) to a user (request.user) with a quantity field. This allows each user to maintain their
+ own cart.
+
+What happens when a user clicks “Add to Cart”?  
+👉 The product ID is passed to the add_to_cart view. If the product is already in the cart, quantity increases; otherwise, a
+ new CartItem is created.
+
+How do you handle anonymous users?  
+👉 If request.user is not authenticated, Django raises an error. Solution: use @login_required or implement a session-based
+ guest cart.
+
+How do you display cart items?  
+👉 In cart_detail.html, loop through cart_items and show product name, price, quantity, and total.
+
+
+Why did you get TemplateDoesNotExist?  
+👉 Because orders/cart_detail.html didn’t exist. Fix: create the file inside orders/templates/orders/.
+
+Why did you get the AnonymousUser error?  
+👉 Because you tried to save a cart item without logging in. Fix: add @login_required or use session-based cart.
+
+🔐 Authentication & Sessions
+What is request.user in Django?  
+👉 It represents the currently logged-in user. If not logged in, it’s AnonymousUser.
+
+How do you enforce login before adding to cart?  
+👉 Use @login_required decorator and set LOGIN_URL in settings.
+
+How did you control image sizes?  
+👉 By using CSS object-fit: cover and fixed height/width in templates.
+
+How did you align cards in a grid?  
+👉 Using Bootstrap’s grid system (row, col-md-3, card h-100).
+
+
+🎯 Final Tip
+In viva, always connect your answers to your project. For example:
+
+“We used ForeignKey in FoodItem to link it to Category.”
+
+“The AnonymousUser error happened because I tried to add to cart without login.”
+
+“We solved image size issues using Bootstrap’s object-fit: cover.”
+
+
+
+What is Django ?  
+👉 Django is a high-level Python web framework that follows the MVT (Model‑View‑Template) architecture. It provides built‑in ORM,
+ authentication, and admin interface.
+
+
+
+Explain the MVT architecture in Django.  
+👉 Model defines the database structure (e.g., Category, FoodItem, CartItem).
+   View contains business logic (e.g., add_to_cart, cart_detail).
+    Template is the frontend (HTML with Django template tags).
+    URLconf maps URLs to views.(acts like a controller in MVC)
+    Together, they form the MVT cycle.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ "ORM (Object‑Relational Mapping)
+What is ORM in Django?  
+👉 ORM is Django’s way of interacting with the database using Python classes instead of raw SQL. Each model class maps to a database table, and each instance maps to a row.
+Example:
+
+python
+class FoodItem(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+This creates a food_item table with name and price columns.
+
+How does ORM simplify database operations?  
+👉 Instead of writing SQL like SELECT * FROM food_item WHERE price < 50;, you can write:
+
+python
+FoodItem.objects.filter(price__lt=50)"
